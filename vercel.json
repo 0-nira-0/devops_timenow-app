@@ -4,28 +4,16 @@
     {
       "src": "backend/api.py",
       "use": "@vercel/python"
-    },
-    {
-      "src": "frontend/**/*",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/time",
+      "src": "/task/unchecked",
       "dest": "backend/api.py"
     },
     {
-      "src": "/clock.jpeg",
-      "dest": "/frontend/clock.jpeg"
-    },
-    {
-      "src": "/",
-      "dest": "/frontend/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/index.html"
+      "src": "/task/checked",
+      "dest": "backend/api.py"
     }
   ]
 }
