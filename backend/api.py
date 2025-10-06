@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 
+
 app = FastAPI()
 
 @app.get("/task/unchecked")
@@ -16,6 +17,3 @@ def get_checked_task():
         "checked": True,
         "text": "run 100 miles"
     })
-
-# Vercel will use this
-handler = app
