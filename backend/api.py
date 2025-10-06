@@ -1,18 +1,13 @@
-from flask import Flask
+from fastapi import FastAPI
+from fastapi.responses import PlainTextResponse
 from datetime import datetime
 
-app = Flask(__name__)  
+app = FastAPI()
 
-@app.route('/time')
-def time():
+@app.get("/time", response_class=PlainTextResponse)
+def get_time():
     now = datetime.now()
-    responseBody = now.strftime("%H:%M:%S")
-    return responseBody
+    return now.strftime("%H:%M:%S")
 
-# uncomment to modify response headers for all requests
-#@app.after_request
-#def add_header(response):
-#    response.headers['Access-Control-Allow-Origin'] = '*'
-#    return response
-
-app.run(debug=True, port=8080, host="0.0.0.0")
+# Vercel looks for a top-level `app` variable (ASGI)
+handler = app
