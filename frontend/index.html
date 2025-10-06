@@ -7,12 +7,12 @@
 </head>
 <body>
     <h1>Awesome web site for checking what time is it now</h1>
-    <img src="clock.jpeg" alt="Clock picture" style="width:200px;height:200px;">
+    <img src="/clock.jpeg" alt="Clock picture" style="width:200px;height:200px;">
     <button onclick="getData()">Get Time</button>
     <div id="result"></div>
     <script>
         function getData() {
-            const apiUrl = '/time';  // Vercel route
+            const apiUrl = '/time';
 
             fetch(apiUrl)
                 .then(response => response.text())
