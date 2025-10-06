@@ -16,8 +16,16 @@
       "dest": "backend/api.py"
     },
     {
+      "src": "/clock.jpeg",
+      "dest": "/frontend/clock.jpeg"
+    },
+    {
+      "src": "/",
+      "dest": "/frontend/index.html"
+    },
+    {
       "src": "/(.*)",
-      "dest": "frontend/index.html"
+      "dest": "/frontend/index.html"
     }
   ]
 }
